@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Filter</title>
+    <script>
+        function updateTextInput(val) {
+            document.getElementById('demo').innerHTML=val;
+        }
+    </script>
+</head>
+<body>
+<h2 style="text-align: center">Product Filter</h2>
+<form name="products" method="POST" action="http://localhost:5000/api/v1/products.json" enctype="application/json">
+    Select the categories <select name="categories">
+    <option selected>Jacket</option>
+    <option >Sweatshirt</option>
+    <option >Jeans</option>
+    <option >Shirts</option>
+    <option >T-shirts</option>
+    <option >Shorts</option>
+    </select><br><br>
+    Enter the tags for the product(seperated by commas)<br>
+    <input type="text" name="tags"><br><br>
+    Price (min=500 , max=4000)<input type="range" name="price" min="500" max="4000"onchange="updateTextInput(this.value);">-----
+    <span id ="demo"></span><br><br>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
+

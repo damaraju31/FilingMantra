@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product List</title>
+    <style>
+        table {
+            width:100%;
+        }
+        table, th, td {
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center">List of Products</h2>
+<div>
+    <table border = 1>
+        <tr>
+            <th>Name</th>
+            <th>SKU_ID</th>
+            <th>Price(Rs)</th>
+            <th>Thumbnail</th>
+            <th>Quantity</th>
+        </tr>
+        {% for record in product_list %}
+        <tr>
+            <td>{{ record.name }}</td>
+            <td>{{ record.SKU_id | int }}</td>
+            <td>{{ record.price}}</td>
+            <td width="50%"><img src="{{ record.img_url }}" width="15%"></td>
+            <td>{{ record.quantity | int }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+</div>
+</body>
+</html>
