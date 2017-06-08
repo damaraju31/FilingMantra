@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Product</title>
+    <style type="text/css" rel="stylesheet">
+        #div{
+            display: inline-block;
+            margin-top: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+{% for record in product_info %}
+    {% set Pid = record.SKU_id | int %}
+    <h2 style="text-align: center">Product Update</h2>
+    <img style="float: left" alt="{{ record.name }}" src="{{ record.img_url }}" width="20%"><br>
+    <div id="div">
+        <form name="update" method="POST" action={{"http://localhost:5000/success/" ~ Pid }}>
+            Name of the Product
+            <input name="nm" type="text" value="{{ record.name }}"><br><br>
+            Tags of the Product
+            <input name="tags" type="text" value="{{ record.tags | join(", ") }}"><br><br>
+            Category of the Product
+            <input name="categories" type="text" value="{{ record.categories | join(", ") }}" ><br><br>
+            Price of the Product
+            <input name="price" type="number" value="{{ record.price | int }}"><br><br>
+            Discount on the Product
+            <input name="discount" type="number" value="{{ record.discount | int }}"><br><br>
+            Quantity of the Product
+            <input name="quantity" type="number" value="{{ record.quantity | int }}"><br><br>
+            <input value="Update" type="submit">
+            <input value="Reset" type="reset">
+        </form>
+    </div>
+{% endfor %}
+</body>
+</html>
