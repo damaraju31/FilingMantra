@@ -18,7 +18,7 @@ For configuration of mongodb follow<br>
 https://www.howtoforge.com/tutorial/install-mongodb-on-ubuntu-16.04/<br>
 
 To access the database, use mongodb restore on prodList in database folder:<br>
-$ sudo mongorestore --db prodList --drop /location/of/prodList<br>
+$ sudo mongorestore --db prodList --drop /downloaded/location/of/prodList<br>
 
 Finally to run the code:<br>
 $ python Assignment.py<br>
