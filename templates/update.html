@@ -23,7 +23,7 @@
             Tags of the Product
             <input name="tags" type="text" value="{{ record.tags | join(", ") }}"><br><br>
             Category of the Product
-            <input name="categories" type="text" value="{{ record.categories | join(", ") }}" ><br><br>
+            <input name="categories" type="text" value="{{ record.categories | join("") }}" ><br><br>
             Price of the Product
             <input name="price" type="number" value="{{ record.price | int }}"><br><br>
             Discount on the Product
