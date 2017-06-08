@@ -19,17 +19,17 @@
     <div id="div">
         <form name="update" method="POST" action={{"http://localhost:5000/success/" ~ Pid }}>
             Name of the Product
-            <input name="nm" type="text" value="{{ record.name }}"><br><br>
+            <input title="Name" name="name" type="text" value="{{ record.name }}"><br><br>
             Tags of the Product
-            <input name="tags" type="text" value="{{ record.tags | join(", ") }}"><br><br>
+            <input title="Tags" name="tags" type="text" value="{{ record.tags | join(", ") }}"><br><br>
             Category of the Product
-            <input name="categories" type="text" value="{{ record.categories | join("") }}" ><br><br>
+            <input title="Category" name="categories" type="text" value="{{ record.categories | join("") }}"><br><br>
             Price of the Product
-            <input name="price" type="number" value="{{ record.price | int }}"><br><br>
+            <input title="Price" name="price" type="number" value="{{ record.price | int }}"><br><br>
             Discount on the Product
-            <input name="discount" type="number" value="{{ record.discount | int }}"><br><br>
+            <input title="Discount" name="discount" type="number" value="{{ record.discount | int }}"><br><br>
             Quantity of the Product
-            <input name="quantity" type="number" value="{{ record.quantity | int }}"><br><br>
+            <input title="Quantity" name="quantity" type="number" value="{{ record.quantity | int }}"><br><br>
             <input value="Update" type="submit">
             <input value="Reset" type="reset">
         </form>

@@ -20,7 +20,7 @@ def success(Pid):
     categories = str(result['categories']).lower()
     tags = str(result['tags']).lower().split(',')
     price = int(result['price'])
-    name = str(result['nm'])
+    name = str(result['name'])
     discount = int(result['discount'])
     quantity = int(result['quantity'])
     Id = int(Pid)
