@@ -1,4 +1,4 @@
-# FillingMantra
+# FilingMantra
 web application using Flask framework
 
 Flask framework installation:<br>
