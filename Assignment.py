@@ -39,13 +39,16 @@ def home_page():
 def products():
     result = request.form
     categories = str(result['categories']).lower()
+    print categories
     tags = str(result['tags']).lower().split(',')
     price = result['price']
     if len(tags) == 1 and tags[0] == "":
-        prd_list = mongo.db.product.find({"price": {'$lte': int(price)}, "categories": categories}, {'_id': 0})
+        prd_list = mongo.db.product.find({"price": {'$lte': int(price)}, "categories": {'$in': categories.split()}},
+                                         {'_id': 0})
     else:
         prd_list = mongo.db.product.find(
-            {"price": {'$lte': int(price)}, "categories": categories, "tags": {'$in': tags}}, {'_id': 0})
+            {"price": {'$lte': int(price)}, "categories": {'$in': categories.split()}, "tags": {'$in': tags}},
+            {'_id': 0})
     return render_template('output.html', prd_list=prd_list)
 
 
